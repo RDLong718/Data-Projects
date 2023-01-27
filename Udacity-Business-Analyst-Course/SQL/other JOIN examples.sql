@@ -1,0 +1,83 @@
+-- SELECT a.id, a.name, o.total
+-- FROM orders o
+-- LEFT JOIN accounts a
+-- ON o.account_id = a.id
+-- SELECT a.id, a.name, o.total
+-- FROM orders o 
+-- RIGHT JOIN accounts a
+-- ON o.account_id = a.id
+-- SELECT o.*, a.*
+-- FROM orders o
+-- LEFT JOIN accounts a
+-- ON o.account_id = a.id
+-- AND a.sales_rep_id = 321500
+-- SELECT r.name AS region, s.name AS rep, a.name AS account
+-- FROM accounts a 
+-- LEFT JOIN sales_reps s
+-- ON a.sales_rep_id = s.id
+-- LEFT JOIN region r
+-- ON s.region_id = r.id
+-- WHERE r.name = 'Midwest'
+-- ORDER BY account 
+-- SELECT r.name AS region, s.name AS rep, a.name AS account
+-- FROM accounts a
+-- JOIN sales_reps s
+-- ON a.sales_rep_id = s.id
+-- JOIN region r
+-- ON s.region_id = r.id
+-- WHERE s.name LIKE 'S%' 
+-- AND r.name = 'Midwest'
+-- ORDER BY account
+-- SELECT r.name AS region, s.name AS rep, a.name AS account
+-- FROM accounts a
+-- JOIN sales_reps s
+-- ON a.sales_rep_id = s.id
+-- JOIN region r
+-- ON s.region_id = r.id
+-- WHERE s.name LIKE '% K%'
+-- AND r.name = 'Midwest'
+-- ORDER BY account
+-- SELECT r.name AS region, a.name AS account, o.total_amt_usd/(o.total+.01) AS unit_price
+-- FROM orders o
+-- JOIN accounts a
+-- ON o.account_id = a.id
+-- JOIN sales_reps s
+-- ON a.sales_rep_id = s.id
+-- JOIN region r
+-- ON s.region_id = r.id
+-- WHERE o.standard_qty > 100
+-- SELECT r.name AS region, a.name AS account, o.total_amt_usd/(o.total+.01) AS unit_price
+-- FROM orders o
+-- JOIN accounts a
+-- ON o.account_id = a.id
+-- JOIN sales_reps s
+-- ON a.sales_rep_id = s.id
+-- JOIN region r
+-- ON s.region_id = r.id
+-- WHERE o.standard_qty > 100
+-- AND o.poster_qty > 50
+-- ORDER BY unit_price 
+-- SELECT r.name AS region, a.name AS account, o.total_amt_usd/(o.total+.01) AS unit_price
+-- FROM orders o
+-- JOIN accounts a
+-- ON o.account_id = a.id
+-- JOIN sales_reps s
+-- ON a.sales_rep_id = s.id
+-- JOIN region r
+-- ON s.region_id = r.id
+-- WHERE o.standard_qty > 100
+-- AND o.poster_qty > 50
+-- ORDER BY unit_price DESC
+-- SELECT DISTINCT a.name AS account,
+--     w.channel
+-- FROM web_events w
+--     JOIN accounts a ON w.account_id = a.id
+-- WHERE a.id = 1001 
+-- SELECT o.occurred_at,
+--     a.name AS account,
+--     o.total,
+--     o.total_amt_usd
+-- FROM orders o
+--     JOIN accounts a ON o.account_id = a.id
+-- WHERE o.occurred_at BETWEEN '2015-01-01' AND '2016-01-01'
+-- ORDER BY o.occurred_at DESC
