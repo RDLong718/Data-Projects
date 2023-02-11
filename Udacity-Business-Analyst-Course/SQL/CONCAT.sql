@@ -1,0 +1,1 @@
+CONCAT(month, '-', day, '-', year) AS date CONCAT(string1, string2, string3)
